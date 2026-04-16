@@ -1,0 +1,33 @@
+package com.javalogicalstatements.Arrays;
+
+public class SelectionSortAlgorithm {
+
+	public static void main(String[] args) {
+		System.out.println("Main method started !");
+		int[] arr = { 45, 35, 28, 17, 16, 4 };
+		int temp = 0;
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			int minIndex = i;
+
+			for (int j = i + 1; j < arr.length; j++) {
+
+				if (arr[j] < arr[minIndex]) {
+					minIndex = j;
+				}
+			}
+			temp = arr[minIndex];
+			arr[minIndex] = arr[i];
+			arr[i] = temp;
+		}
+		
+		System.out.println("After Sorting : ");
+
+		for (int a : arr) {
+			System.out.print(a + " ");
+
+		}
+
+	}
+
+}
