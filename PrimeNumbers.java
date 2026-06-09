@@ -1,46 +1,38 @@
-package com.javalogicalstatements.Arrays;
+package com.collections;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+
+import java.util.Collection;
 
 public class PrimeNumbers {
-
-	static boolean isPrime(int a) {
-		boolean status = true;
-
-		if (a == 0 || a == 1) {
-			status = false;
-		}
-
+	static boolean isprime(int a) {
+		if (a <= 1)
+			return false;
 		for (int i = 2; i < a; i++) {
-			if (a % i == 0) {
-				status = false;
-				break;
-			}
-			
+			if (a % i == 0)
+				return false;
 		}
-		return status;
+		return true;
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Main method Started !");
+		Collection<Integer> list = new ArrayList<>();
 
-		Scanner sc = new Scanner(System.in);
+		list.add(10);
+		list.add(11);
+		list.add(13);
+		list.add(15);
+		list.add(17);
+		list.add(20);
 
-		System.out.println("Enter a size of an array : ");
-		int size = sc.nextInt();
-
-		int[] arr = new int[size];
-
-		System.out.println("Enter Elements to an array : ");
-		for (int i = 0; i < size; i++) {
-			arr[i] = sc.nextInt();
-		}
-		System.out.println("*************************************");
-
-		for (int a : arr) {
-			boolean status = isPrime(a);
+		System.out.println(list);
+		System.out.println("Prime numbers ");
+		boolean status = false;
+		for (int i : list) {
+			status = isprime(i);
 			if (status) {
-				System.out.println(a);
+				System.out.println(i + " ");
+				continue;
 			}
 
 		}
